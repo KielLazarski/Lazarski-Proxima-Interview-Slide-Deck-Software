@@ -1,0 +1,21 @@
+{
+  "name": "deck-html",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A presentation editor that is one HTML file: opens PowerPoint, edits, presents, exports .pptx and PDF. No server, no network, no dependencies at runtime.",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node build.js",
+    "fixture": "python3 -I tools/make-fixture.py test/fixture.pptx",
+    "test": "node build.js && node tools/test.js Deck.html",
+    "shots": "node tools/shots.js Deck.html test/slides",
+    "docshots": "node tools/docshots.js Deck.html docs",
+    "export": "node tools/export.js Deck.html out Lazarski-Proxima-technical-exercise"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  }
+}
